@@ -30,9 +30,9 @@ jobs:
           line1="line1"
           line2="line2-1
           line2-2"
-          echo "line1=$line1" >> $GITHUB_ENV
-          echo "line2=$line2" >> $GITHUB_ENV
+          echo "line1=$line1" >> $GITHUB_OUTPUT
+          echo "line2=$line2" >> $GITHUB_OUTPUT
       - name: output
         run: |
-          echo "env.line1=${{ env.line1 }}"
-          echo "env.line2=${{ env.line2 }}"
+          echo "output.line1=${{ steps.step_one.outputs.line1 }}"
+          echo "output.line2=${{ steps.step_one.outputs.line2 }}"
